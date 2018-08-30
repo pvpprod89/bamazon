@@ -48,12 +48,24 @@ function requestProduct() {
         name: "productID",
         type: "input",
         message:
-          "\n\nPlease enter product ID of the product you want to purchase."
+          "\n\nPlease enter product ID of the product you want to purchase.",
+        validate: function(value) {
+          if (isNaN(value) === false) {
+            return true;
+          }
+          return false;
+        }
       },
       {
         name: "productUnits",
         type: "input",
-        message: "Please enter Qty you needed."
+        message: "Please enter Qty you needed.",
+        validate: function(value) {
+          if (isNaN(value) === false) {
+            return true;
+          }
+          return false;
+        }
       }
     ])
     .then(function(answer) {
